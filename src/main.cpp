@@ -10,7 +10,7 @@ int main(int argc, char** argv )
     VideoCaptureStage vcs;
     ScaleStage ss(vcs, 320, 240);
     BlurStage bs(ss, 31);
-    HueFilterStage hfs(bs, 0, 10);
+    HueFilterStage hfs(bs, 60, 15);
 
     for(;;)
     {
