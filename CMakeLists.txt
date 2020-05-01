@@ -13,7 +13,7 @@ if (CMAKE_COMPILER_IS_GNUCC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Werror -Wno-unused-function -Wno-unused-parameter -Wno-unused-variable")
 endif()
 
-set(SOURCE src/main.cpp src/ScaleStage.cpp src/VideoCaptureStage.cpp)
+set(SOURCE src/main.cpp src/ScaleStage.cpp src/VideoCaptureStage.cpp src/HueFilterStage.cpp src/BlurStage.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCE})
 

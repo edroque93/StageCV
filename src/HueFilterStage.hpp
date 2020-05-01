@@ -5,15 +5,15 @@
 #include "GeneratorStage.hpp"
 #include "FilterStage.hpp"
 
-class ScaleStage : public FilterStage
+class HueFilterStage : public FilterStage
 {
 public:
-    ScaleStage(GeneratorStage &input, int width, int height);
+    HueFilterStage(GeneratorStage &input, int hue, int radius);
     void Execute();
-    std::string_view GetStageName() const { return "ScaleStage"; };
+    std::string_view GetStageName() const { return "HueFilterStage"; };
     cv::Mat GetOutputImage() { return output; };
 private:
     cv::Mat output;
-    int width;
-    int height;
+    int hue;
+    int radius;
 };

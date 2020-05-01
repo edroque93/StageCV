@@ -5,15 +5,14 @@
 #include "GeneratorStage.hpp"
 #include "FilterStage.hpp"
 
-class ScaleStage : public FilterStage
+class BlurStage : public FilterStage
 {
 public:
-    ScaleStage(GeneratorStage &input, int width, int height);
+    BlurStage(GeneratorStage &input, int kernelRadius);
     void Execute();
-    std::string_view GetStageName() const { return "ScaleStage"; };
+    std::string_view GetStageName() const { return "BlurStage"; };
     cv::Mat GetOutputImage() { return output; };
 private:
     cv::Mat output;
-    int width;
-    int height;
+    int kernelRadius;
 };
