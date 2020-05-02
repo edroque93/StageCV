@@ -1,1 +1,1 @@
-Just toying around, as usual.
+Example of contour detection with OpenCV.
