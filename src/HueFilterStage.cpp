@@ -15,13 +15,12 @@ void HueFilterStage::Execute()
     if ((hue - radius) < 0 || (hue + radius) > 179)
     {
         cv::Mat mask1, mask2;
-        cv::inRange(imageInHSV, cv::Scalar(0, 70, 70), cv::Scalar(hue + radius, 255, 255), mask2);
-        cv::inRange(imageInHSV, cv::Scalar(180 - abs(hue - radius), 70, 70), cv::Scalar(180, 255, 255), mask1);
+        cv::inRange(imageInHSV, cv::Scalar(0, 60, 60), cv::Scalar(hue + radius, 255, 255), mask2);
+        cv::inRange(imageInHSV, cv::Scalar(180 - abs(hue - radius), 60, 60), cv::Scalar(180, 255, 255), mask1);
         output = mask1 | mask2;
     }
     else
     {
-        cv::inRange(imageInHSV, cv::Scalar(hue - radius, 70, 70), cv::Scalar(hue + radius, 255, 255), output);
+        cv::inRange(imageInHSV, cv::Scalar(hue - radius, 60, 60), cv::Scalar(hue + radius, 255, 255), output);
     }
-    
 }
