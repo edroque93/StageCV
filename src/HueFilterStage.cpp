@@ -12,7 +12,7 @@ void HueFilterStage::Execute()
     cv::Mat imageInHSV;
     input.Execute();
     cv::cvtColor(input.GetOutputImage(), imageInHSV, cv::COLOR_BGR2HSV);
-    if ((hue - radius) < 0 || (hue + radius) > 179)
+    if ((hue - radius) < 0 || (hue + radius) > 180)
     {
         cv::Mat mask1, mask2;
         cv::inRange(imageInHSV, cv::Scalar(0, 60, 60), cv::Scalar(hue + radius, 255, 255), mask2);
